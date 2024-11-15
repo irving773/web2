@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENVENIDOS AL MUNDO GAMER</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #e0e0e0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            color: #ffcc00;
+        }
+        
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body onclick="document.getElementById('miAudio').play()">
+    <audio id="miAudio" loop>
+        <source src="Halo Theme Song Original.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <h1>Bienvenido al Mundo Gamer</h1>
+    <p>Haz clic en cualquier lugar para activar la música.</p>
+</body>
+
+</html>

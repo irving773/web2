@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Gamer</title>
+    <style>
+        body {
+            background-color: #000; /* Fondo negro */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+            z-index: 1;
+            animation: fadeIn 1s ease;
+            max-width: 800px;
+            overflow-y: auto; 
+            max-height: 90vh;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        @keyframes rain {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .game-control {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 20px);
+            font-size: 30px;
+            opacity: 0.8;
+            animation: rain linear infinite;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00ff00, #007700);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 3px 3px 10px rgba(0, 255, 0, 0.7);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.4);
+        }
+
+        .socials ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .socials li {
+            margin: 0 15px;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.5em;
+            padding: 12px 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s, box-shadow 0.3s;
+        }
+
+        a:hover {
+            color: #1a1a1a;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            text-shadow: 0 0 10px #00ff00; 
+        }
+
+        .bio, .games {
+            margin-top: 30px;
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .control-image {
+            width: 80px; 
+            margin: 0 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .control-image:hover {
+            transform: scale(1.1); 
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+        }
+
+        
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #00ff00;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            a {
+                font-size: 1.2em;
+            }
+            .control-image {
+                width: 60px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>¡Hola, soy [Alejandro]!</h1>
+            <p>Creador de mundo gamer.</p>
+        </header>
+        <section class="bio">
+            <h2>Sobre mí</h2>
+            <p>Soy un apasionado de los videojuegos y disfruto compartir mi experiencia y mis partidas con todos ustedes. Desde juegos de acción hasta RPGs, siempre estoy buscando nuevas aventuras en el mundo gamer.</p>
+        </section>
+        <section class="games">
+            <h2>Mis juegos favoritos</h2>
+            <ul>
+                <li>🎮 Hollow Knight</li>
+                <li>🎮 GTA San Andreas</li>
+                <li>🎮 Devil May Cry 3</li>
+                <li>🎮 Terraria</li>
+            </ul>
+        </section>
+        <section class="socials">
+            <h2>Sígueme en mis redes sociales</h2>
+            <ul>
+                <li><a href="https://facebook.com/irving Alejandro Arvizu - ramirez" target="_blank">Facebook</a></li>
+                <li><a href="https://instagram.com/irving_alejandro_arvizu" target="_blank">Instagram</a></li>
+                <li><a href="https://discord.com/invite/987430159684599879" target="_blank">Discord</a></li>
+                <li><a href="mailto:arvizuirving21@gmail.com" target="_blank">Correo</a></li>
+            </ul>
+        </section>
+        <section class="gallery">
+            <h2>Galería de mis partidas</h2>
+            <div class="game-controls">
+                <img src="imagen de hollow.jpg" alt="Hollow Knight" class="control-image" onclick="openModal(this.src)">
+                <img src="imagen de devil may cry 3.5.jpg" alt="Devil May Cry 3" class="control-image" onclick="openModal(this.src)">
+                <img src="imagen de gta sanandres.jpg" alt="GTA San Andreas" class="control-image" onclick="openModal(this.src)">
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal para mostrar la imagen ampliada -->
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Imagen Ampliada">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            modal.style.display = 'flex'; // Muestra el modal
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // Oculta el modal
+        }
+
+        // Crear lluvia de controles
+        function createRain() {
+            const control = document.createElement('div');
+            control.className = 'game-control';
+            control.innerHTML = '🎮'; // Icono de control
+            control.style.left = Math.random() * 100 + 'vw'; // Posición aleatoria en el eje X
+            control.style.animationDuration = Math.random() * 3 + 2 + 's'; // Duración aleatoria
+            document.body.appendChild(control);
+            
+            // Remover el control después de que caiga
+            setTimeout(() => {
+                control.remove();
+            }, 5000); // Tiempo para que el control desaparezca
+        }
+
+        // Generar lluvia cada 500ms
+        setInterval(createRain, 500);
+    </script>
+</body>
+</html>

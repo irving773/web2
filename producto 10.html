@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devil May Cry 5</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            background: rgba(28, 28, 28, 0.85);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+            flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas si es necesario */
+        }
+        
+        .image-container {
+            margin-right: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+            flex: 1 1 300px; /* Hace que la imagen ocupe el 100% de su espacio disponible */
+            max-width: 300px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 1px 1px 5px #4caf50;
+        }
+        
+        p, li {
+            font-size: 1.2em;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .barcode {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .barcode img {
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+        }
+        
+        .highlight {
+            color: #4caf50;
+        }
+        
+        .btn-regresar {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            width: 150px;
+        }
+        
+        .btn-regresar:hover {
+            background-color: #45a049;
+        }
+        
+        /* Media Queries para Responsividad */
+        
+        /* Pantallas de hasta 1024px (tabletas, pantallas medianas) */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+        
+            .image-container {
+                margin-right: 15px;
+                max-width: 250px; /* Reducir el tamaño máximo de la imagen */
+            }
+        
+            h1 {
+                font-size: 2.2em; /* Reducir tamaño de texto en pantallas más pequeñas */
+            }
+        
+            p, li {
+                font-size: 1.1em; /* Reducir el tamaño de los párrafos y listas */
+            }
+        }
+        
+        /* Pantallas de hasta 768px (pantallas de tabletas pequeñas y móviles grandes) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Cambiar a columna para pantallas más pequeñas */
+                align-items: center;
+            }
+        
+            .image-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+                max-width: 100%; /* La imagen debe ocupar el 100% del ancho */
+            }
+        
+            h1 {
+                font-size: 1.8em; /* Reducir aún más el tamaño de los encabezados */
+            }
+        
+            p, li {
+                font-size: 1em; /* Ajustar el tamaño del texto */
+            }
+        
+            .btn-regresar {
+                width: 100%; /* Los botones ocuparán el 100% del ancho disponible */
+            }
+        }
+        
+        /* Pantallas de hasta 480px (pantallas de dispositivos móviles pequeños) */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px; /* Reducir el margen en pantallas móviles */
+                padding: 10px; /* Reducir el padding del contenedor */
+            }
+        
+            .image-container {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        
+            h1 {
+                font-size: 1.6em; /* Reducir aún más el tamaño de los encabezados */
+            }
+        
+            p, li {
+                font-size: 0.9em; /* Reducir el tamaño del texto */
+            }
+        
+            .btn-regresar {
+                padding: 12px;
+                font-size: 1em; /* Ajustar el tamaño de los botones */
+                width: 100%; /* Los botones ocupan todo el ancho disponible */
+            }
+        }
+    </style> 
+    </head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="imagen de devil may cry 5.jpg" alt="Devil May Cry 5" width="600">
+        </div>
+        <div class="info">
+            <h1 class="highlight">Información del Producto</h1>
+            <p>En este juego, asumes el papel de un <span class="highlight">administrador de un edificio de apartamentos</span> en un estado totalitario y debes espiar a los inquilinos para mantener el control del lugar.</p>
+            <p><strong>Datos del juego:</strong></p>
+            <ul>
+                <li><span class="highlight">Memoria RAM:</span> 8 GB de RAM</li>
+                <li><span class="highlight">Sistema Operativo:</span> WINDOWS 7, 8.1, 10 (64-BIT Required)</li>
+                <li><span class="highlight">Espacio en disco:</span> 35 GB de espacio disponible</li>
+            </ul>
+            <div class="barcode">
+            </div>
+        </div>
+    </div>
+<button class="btn-regresar" onclick="window.history.back()">Regresar al Catálogo</button>
+</body>
+</html>

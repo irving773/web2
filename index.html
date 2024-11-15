@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Mejorado</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00ff00;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 25px rgba(255, 0, 127, 1);
+            }
+        }
+
+        form {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 15px;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            width: calc(100% - 20px);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #ff007f;
+            box-shadow: 0 0 10px #ff007f;
+            outline: none;
+        }
+
+        .button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .button:hover {
+            background-color: #ff007f;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff007f;
+        }
+
+        .raindrop {
+            position: absolute;
+            top: -50px;
+            font-size: 2em;
+            color: rgba(0, 255, 0, 0.5);
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            form {
+                padding: 20px;
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            form {
+                padding: 15px;
+            }
+            .button {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="validar.php" method="post">
+        <h1>Inicio de sesión</h1>
+        <p>Usuario: <input type="text" placeholder="Ingrese su nombre" name="usuario" required></p>
+        <p>Contraseña: <input type="password" placeholder="Ingrese su contraseña" name="contraseña" required></p>
+        <button class="button" onclick="location.href='pagina de presentacion.html'; return false;">Confirmar</button>
+        <button class="button" onclick="location.href='crear_cuenta.html'; return false;">Crear cuenta</button>
+        <button class="button" onclick="location.href='eliminar_usu.php'; return false;">Eliminar usuario</button>
+    </form>
+    <script>
+        // Generar gotas animadas
+        for (let i = 0; i < 20; i++) {
+            const drop = document.createElement('div');
+            drop.classList.add('raindrop');
+            drop.style.left = `${Math.random() * 100}vw`;
+            drop.style.animationDuration = `${2 + Math.random() * 3}s`;
+            drop.textContent = '✦';
+            document.body.appendChild(drop);
+        }
+    </script>
+</body>
+</html>
+
+
